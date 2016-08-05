@@ -50,6 +50,9 @@ function track(trackId) {
     datatype: 'JSON',
     success: function(data) {
       console.log(data);
+    },
+    error: function() {
+      window.location = 'guiabolso-webview://alert?message=deupau';
     }
   });
 }

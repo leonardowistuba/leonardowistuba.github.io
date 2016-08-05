@@ -43,7 +43,12 @@ Trackeia algo ae <span id="banana">DUP</span onclick="track()"><br /><br />
 $('#banana').click( function(e) {e.preventDefault(); track("something"); return false; } );
 
 function track(parameter) {
-  window.location = 'http://alert?message=redirectonsuccess';
+
+  window.setTimeout(function(){
+        window.location = 'http://alert.com?message=redirectonsuccess';
+  },0);
+
+
 
   // return 'tracking done'
   // $.ajax({

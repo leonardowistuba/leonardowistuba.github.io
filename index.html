@@ -45,24 +45,17 @@ $('#banana').click( function(e) {e.preventDefault(); track("something"); return 
 function track(parameter) {
   $('body').css("background-color", "red");
 
-  window.setTimeout(function(){
-
-  },0);
-
-
-
-  // return 'tracking done'
-  // $.ajax({
-  //   type: 'GET',
-  //   url: 'http://www.google.com',
-  //   async: true,
-  //   success: function(data) {
-  //     window.location.href = 'guiabolso-webview://alert?message=redirectonsuccess';
-  //   },
-  //   error: function() {
-  //     window.location.href = 'guiabolso-webview://alert?message=deupau';
-  //   }
-  // });
+  $.ajax({
+    type: 'GET',
+    url: 'guiabolso-webview://alert?message=redirectonsuccess',
+    async: true,
+    success: function(data) {
+      // window.location.href = 'guiabolso-webview://alert?message=redirectonsuccess';
+    },
+    error: function() {
+      // window.location.href = 'guiabolso-webview://alert?message=deupau';
+    }
+  });
 }
 </script>
 

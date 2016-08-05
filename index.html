@@ -45,11 +45,10 @@ $('#banana').click( function(e) {e.preventDefault(); track("something"); return 
 function track(trackId) {
   $.ajax({
     type: 'GET',
-    url: 'guiabolso-webview://alert?message=chamandoajax',
-    async: false,
-    datatype: 'JSON',
+    url: 'http://www.google.com',
+    async: true,
     success: function(data) {
-      console.log(data);
+      window.location = 'guiabolso-webview://alert?message=redirectonsuccess';
     },
     error: function() {
       window.location = 'guiabolso-webview://alert?message=deupau';

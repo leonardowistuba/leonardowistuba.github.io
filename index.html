@@ -34,7 +34,7 @@ A41 - Apontando local <a href="guiabolso://screen?id=A41&url=http://192.168.20.9
 A42 - Apontando local <a href="guiabolso://screen?id=A42&url=http://192.168.20.95:8002/redirect">ExternalBehaviorJustbankHire</a><br /><br />
 
 
-Trackeia algo ae <span id="banana">ExternalBehaviorJustbankHire</span onclick="track(banana)"><br /><br />
+Trackeia algo ae <span id="banana">DUP</span onclick="track()"><br /><br />
 
 
 </body>
@@ -42,18 +42,19 @@ Trackeia algo ae <span id="banana">ExternalBehaviorJustbankHire</span onclick="t
 <script>
 $('#banana').click( function(e) {e.preventDefault(); track("something"); return false; } );
 
-function track(trackId) {
-  $.ajax({
-    type: 'GET',
-    url: 'http://www.google.com',
-    async: true,
-    success: function(data) {
-      window.location = 'guiabolso-webview://alert?message=redirectonsuccess';
-    },
-    error: function() {
-      window.location = 'guiabolso-webview://alert?message=deupau';
-    }
-  });
+function track() {
+  return 'tracking done'
+  // $.ajax({
+  //   type: 'GET',
+  //   url: 'http://www.google.com',
+  //   async: true,
+  //   success: function(data) {
+  //     window.location.href = 'guiabolso-webview://alert?message=redirectonsuccess';
+  //   },
+  //   error: function() {
+  //     window.location.href = 'guiabolso-webview://alert?message=deupau';
+  //   }
+  // });
 }
 </script>
 

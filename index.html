@@ -1,11 +1,12 @@
 <html>
 
 <head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 
 <body>
 
-Campanhas do Facebook
+  Campanhas do Facebook
 </a><br /><br /></a><br /><br /></a><br /><br />
 A20 - <a href="guiabolso://campaign?target=A40&url=http://hydra-preprod.sa-east-1.elasticbeanstalk.com/redirect">Campanha do facebook</a><br /><br />
 <br /><br />
@@ -33,6 +34,25 @@ A41 - Apontando local <a href="guiabolso://screen?id=A41&url=http://192.168.20.9
 A42 - Apontando local <a href="guiabolso://screen?id=A42&url=http://192.168.20.95:8002/redirect">ExternalBehaviorJustbankHire</a><br /><br />
 
 
+Trackeia algo ae <a id="banana" href="guiabolso://screen?id=A42&url=http://192.168.20.95:8002/redirect">ExternalBehaviorJustbankHire</a onclick="track(banana)"><br /><br />
+
+
 </body>
+
+<script>
+$('#banana').click( function(e) {e.preventDefault(); track("something"); return false; } );
+
+function track(trackId) {
+  $.ajax({
+    type: 'GET',
+    url: 'guiabolso://screen?id=A28',
+    async: false,
+    datatype: 'JSON',
+    success: function(data) {
+      console.log(data);
+    }
+  });
+}
+</script>
 
 </html>

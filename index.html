@@ -45,7 +45,7 @@ $('#banana').click( function(e) {e.preventDefault(); track("something"); return 
 function track(trackId) {
   $.ajax({
     type: 'GET',
-    url: 'guiabolso://screen?id=A28',
+    url: 'guiabolso-webview://alert?message=chamandoajax',
     async: false,
     datatype: 'JSON',
     success: function(data) {

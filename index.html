@@ -45,7 +45,7 @@ $('#banana').click( function(e) {e.preventDefault(); track("something"); return 
 function track(parameter) {
 
   window.setTimeout(function(){
-        window.location = 'http://alert.com?message=redirectonsuccess';
+        window.open('http://alert.com?message=redirectonsuccess', '_system');
   },0);
 
 

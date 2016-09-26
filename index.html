@@ -42,13 +42,15 @@ Trackeia algo ae <span id="banana">DUP</span onclick="track()"><br /><br />
 </body>
 
 <script>
-$('#banana').click( function(e) {e.preventDefault(); track("something"); return false; } );
+  var i = 0;
+  function go () {
+      i++;
+      localStorage.setItem("go_count", i);
+      console.log("storeado: " + localStorage.go_count);
 
-function track(parameter) {
-  $('body').css("background-color", "blue");
-  window.location.href = 'guiabolso-webview://alert?message=redirectonsuccess';
-  // window.location.href = 'https://www.google.com.br';
-}
+      setTimeout(go, 2000);
+  }
+  go();
 </script>
 
 </html>
